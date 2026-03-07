@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Power Ease – Herbs Luv</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+margin:0;
+color:white;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+}
+
+/* ANNOUNCEMENT BAR */
+
+.announcement{
+background:linear-gradient(90deg,#ff0000,#7b0000);
+color:#ffd000;
+display:flex;
+gap:60px;
+padding:10px;
+white-space:nowrap;
+overflow:hidden;
+font-weight:bold;
+animation:scroll 20s linear infinite;
+}
+
+@keyframes scroll{
+0%{transform:translateX(100%)}
+100%{transform:translateX(-100%)}
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+justify-content:center;
+padding:40px;
+gap:40px;
+}
+
+.hero-left img{
+width:100%;
+max-width:350px;
+border-radius:10px;
+}
+
+.hero-right{
+max-width:450px;
+background:linear-gradient(145deg,#1c2b36,#0d1a22);
+padding:30px;
+border-radius:12px;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.price{
+font-size:32px;
+color:#00ff90;
+}
+
+del{
+color:#aaa;
+}
+
+/* BUTTON */
+
+.order-btn{
+background:linear-gradient(90deg,#00c853,#00e676);
+border:none;
+padding:15px;
+width:100%;
+font-size:18px;
+color:black;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.05)}
+100%{transform:scale(1)}
+}
+
+/* COUNTDOWN */
+
+.countdown{
+display:flex;
+gap:10px;
+margin-top:20px;
+}
+
+.timebox{
+background:linear-gradient(#ff0000,#8b0000);
+padding:10px;
+border-radius:6px;
+text-align:center;
+width:70px;
+}
+
+/* ORDER FORM */
+
+.orderform{
+background:linear-gradient(145deg,#1c2b36,#0d1a22);
+padding:30px;
+margin:40px auto;
+max-width:500px;
+border-radius:12px;
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:6px;
+}
+
+/* REVIEWS */
+
+.reviews{
+padding:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.review-card{
+background:linear-gradient(145deg,#1c2b36,#0d1a22);
+padding:20px;
+border-radius:10px;
+}
+
+/* REVIEW FORM */
+
+.reviewform{
+background:linear-gradient(145deg,#004e92,#000428);
+padding:30px;
+max-width:500px;
+margin:40px auto;
+border-radius:12px;
+}
+
+.reviewform textarea{
+height:120px;
+}
+
+/* SHIPPING */
+
+.shipping{
+padding:40px;
+background:linear-gradient(145deg,#1c2b36,#0d1a22);
+margin-top:40px;
+}
+
+/* FOOTER */
+
+footer{
+background:#020d0d;
+padding:40px;
+}
+
+.links{
+max-width:700px;
+margin:auto;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+}
+
+/* POPUP */
+
+.popup{
+position:fixed;
+bottom:90px;
+left:20px;
+background:white;
+color:black;
+padding:10px;
+border-radius:6px;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-right{
+max-width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="announcement">
+<span>🚚 Free Delivery All Over Pakistan</span>
+<span>🌿 100% Herbal Formula</span>
+<span>🔥 Limited Time 40% Discount</span>
+<span>📦 Discreet Packaging</span>
+<span>💊 Boost Performance Naturally</span>
+</div>
+
+<section class="hero">
+
+<div class="hero-left">
+<img src="product.png">
+</div>
+
+<div class="hero-right">
+
+<h2>Power Ease Capsules</h2>
+
+<p style="font-family:'Jameel Noori Nastaleeq';font-size:24px;" dir="rtl">
+آرڈر کرنے کے لیے (<span style="font-family:Arial;font-weight:bold;">ORDER NOW</span>) بٹن پر کلک کریں
+</p>
+
+<p class="price"><del>Rs 3499</del> Rs 1999</p>
+
+<button class="order-btn" onclick="scrollToForm()">
+ORDER NOW
+</button>
+
+<div class="countdown">
+
+<div class="timebox">
+<span id="h">01</span>
+<p>hrs</p>
+</div>
+
+<div class="timebox">
+<span id="m">59</span>
+<p>mins</p>
+</div>
+
+<div class="timebox">
+<span id="s">59</span>
+<p>secs</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="orderform" id="order">
+
+<h2>Place Your Order</h2>
+
+<input type="text" placeholder="Your Name">
+
+<input type="tel" placeholder="Phone Number">
+
+<select>
+<option>Power Ease 10 Capsules</option>
+<option>Power Ease 20 Capsules</option>
+</select>
+
+<textarea placeholder="Full Address"></textarea>
+
+<button class="order-btn">Submit Order</button>
+
+</section>
+
+<section class="reviews">
+
+<div class="review-card">
+<h3>Zeeshan</h3>
+★★★★★
+<p>first time koi sexual tablet use ki hai or me to regular customer bann gaya hun.</p>
+</div>
+
+<div class="review-card">
+<h3>Furqan Riaz</h3>
+★★★★★
+<p>kya viagra ya cialis jesa power ultra use ki hai.</p>
+</div>
+
+<div class="review-card">
+<h3>Usman</h3>
+★★★★☆
+<p>overall experience great and performance improved.</p>
+</div>
+
+</section>
+
+<section class="reviewform">
+
+<h2>Write a Review</h2>
+
+<input placeholder="Your Name">
+
+<input placeholder="Your Email">
+
+<p>Rating</p>
+★★★★★
+
+<textarea placeholder="Your Review"></textarea>
+
+<button class="order-btn">Submit Review</button>
+
+</section>
+
+<section class="shipping">
+
+<h2>Shipping & Delivery</h2>
+
+<p>
+Delivery all over Pakistan available.
+Orders 24 hours me dispatch ho jate hain aur normally 2-4 days me deliver ho jate hain.
+Cash on Delivery available hai aur discreet packaging use ki jati hai.
+</p>
+
+</section>
+
+<footer>
+
+<div class="links">
+
+<h3>Useful Links</h3>
+
+<p><b>Privacy Policy</b></p>
+<p>Your personal information is safe with us.</p>
+
+<p><b>Returns & Refund Policy</b></p>
+<p>Return requests accepted within 7 days.</p>
+
+<p><b>Terms & Conditions</b></p>
+<p>Orders are subject to verification.</p>
+
+<p><b>Contact Us</b></p>
+<p>Email support available 24/7.</p>
+
+</div>
+
+</footer>
+
+<a href="https://wa.me/923000000000">
+<img class="whatsapp"
+src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
+
+<div class="popup" id="popup"></div>
+
+<script>
+
+function scrollToForm(){
+document.getElementById("order").scrollIntoView({
+behavior:"smooth"
+});
+}
+
+var names=[
+"Ali from Lahore ordered Power Ease",
+"Ahmed from Karachi ordered Power Ease",
+"Bilal from Islamabad ordered Power Ease",
+"Usman from Faisalabad ordered Power Ease"
+];
+
+setInterval(function(){
+document.getElementById("popup").innerText=
+names[Math.floor(Math.random()*names.length)];
+},4000);
+
+</script>
+
+</body>
+</html>
