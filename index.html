@@ -370,23 +370,25 @@ src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 
 <script>
 
-function scrollToForm(){
-document.getElementById("order").scrollIntoView({
-behavior:"smooth"
-});
+var totalSeconds = 12 * 60 * 60;
+
+function updateCountdown(){
+
+var hours = Math.floor(totalSeconds / 3600);
+var minutes = Math.floor((totalSeconds % 3600) / 60);
+var seconds = totalSeconds % 60;
+
+document.getElementById("h").innerText = hours;
+document.getElementById("m").innerText = minutes;
+document.getElementById("s").innerText = seconds;
+
+if(totalSeconds > 0){
+totalSeconds--;
 }
 
-var names=[
-"Ali from Lahore ordered Power Ease",
-"Ahmed from Karachi ordered Power Ease",
-"Bilal from Islamabad ordered Power Ease",
-"Usman from Faisalabad ordered Power Ease"
-];
+}
 
-setInterval(function(){
-document.getElementById("popup").innerText=
-names[Math.floor(Math.random()*names.length)];
-},4000);
+setInterval(updateCountdown,1000);
 
 </script>
 
